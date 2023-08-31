@@ -1,0 +1,25 @@
+import React from 'react'
+import sami from '../images/developer.png'
+import { Link } from 'react-router-dom'
+const AboutSection = () => {
+    return (
+        <div className='main-about'>
+            <div className="about-me">
+                <div className="left-about">
+                    <img src={sami} alt="a boyPicture" />
+                </div>
+                <div className="right-about">
+                    <h2>Who I Am?</h2>
+                    <p>Thank you for visiting my portfolio! I'm excited to introduce myself as a committed front-end developer who loves using React to make amazing web experiences. I enjoy turning design ideas into smooth and user-friendly websites. I bring together creativity and technical skills for every project I work on. I create responsive and secure websites for clients.</p>
+                    <button className='btn-dark' download>
+                        <Link to="/contact">Hire Me</Link>
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+    )
+}
+
+export default AboutSection
