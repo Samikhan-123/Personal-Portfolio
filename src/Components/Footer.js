@@ -26,13 +26,13 @@ const Footer = () => {
                     <h4>About The Company</h4>
                     <p>Hy this is me sami khan. the Front-End-Developer With React.js Expertise. Feel free to discussing new projects and design challenges.</p>
                     <div className="social">
-                        <Link to="#" className='fb'>
+                        <Link to="https://web.facebook.com/samikhan7816" target='_blank' className='fb'>
                             <FaFacebook className='social-icon facebook' size={20} style={{ color: '#fff' }} />
                         </Link>
-                        <Link to="#" className='tr'>
+                        <Link to="https://twitter.com/SAMIIKHANNN" target='_blank' className='tr'>
                             <FaTwitter className='social-icon twitter' size={20} style={{ color: '#fff' }} />
                         </Link>
-                        <Link to="#" className='in'>
+                        <Link to="https://www.linkedin.com/in/muhammad-samiullah-khan-00323823a/" target='_blank' className='in'>
                             <FaLinkedin className='social-icon linkedin' size={20} style={{ color: '#fff' }} />
                         </Link>
                     </div>
