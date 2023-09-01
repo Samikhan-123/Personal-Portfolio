@@ -9,7 +9,7 @@ const Navbar = () => {
 
     const [color, setColor] = useState(false)
     const changeColor = () => {
-        if (window.scrollY >= 100) {
+        if (window.scrollY >= 70) {
             document.body.style.backgroundColor = '#000'
             setColor(true)
         } else {

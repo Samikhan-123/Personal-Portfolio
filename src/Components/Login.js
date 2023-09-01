@@ -16,10 +16,12 @@ const Login = () => {
       subject: Yup.string(),
       message: Yup.string().required('Message is required'),
     }),
-    onSubmit: values => {
+    onSubmit: (values,{resetForm}) => {
       // handle form submission 
       console.log(values);
       alert(`Hy this is me ${formik.values.name} and my email is ${formik.values.email} and subject is ${formik.values.subject} and my messages is ${formik.values.message}`)
+      resetForm();
+
     },
   });
 
