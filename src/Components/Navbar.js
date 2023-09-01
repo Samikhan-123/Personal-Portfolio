@@ -1,11 +1,22 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 import { FaBars, FaGithubSquare, FaLinkedin, FaTimes } from 'react-icons/fa';
 const Navbar = () => {
     const [click, setClick] = useState(false);
+
     const handleClick = () => {
         setClick(!click);
     };
+    const autoClose = () => {
+        setClick(false);
+      };
+
+      const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth', 
+        });
+      };
 
     const [color, setColor] = useState(false)
     const changeColor = () => {
@@ -20,12 +31,12 @@ const Navbar = () => {
     window.addEventListener('scroll', changeColor)
 
     return (
-        <div className='main'>
+        <div className='main' >
             <nav className={color ? ('main-nav-bg') : ('main-nav')}>
-                <div className="logo">
+                <div className="logo" onClick={autoClose}>
                     <NavLink to="/"> SAMI<span>KHAN</span></NavLink>
                 </div>
-                <ul className={click ? 'nav-list active' : 'nav-list'}>
+                <ul onClick={() => { autoClose(); scrollToTop(); }} className={click ? 'nav-list active' : 'nav-list'}>
                     <li><NavLink to="/" activeclassname="active">HOME</NavLink></li>
                     <li><NavLink to="/about" >ABOUT</NavLink></li>
                     <li><NavLink to="/project" >PROJECTS</NavLink></li>
