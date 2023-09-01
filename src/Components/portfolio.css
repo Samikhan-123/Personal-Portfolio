@@ -288,7 +288,6 @@ li {
   background-color: transparent;
 }
 
-
 .main-nav {
   height: 8vh;
   width: 100%;
@@ -944,7 +943,7 @@ form {
 
 .login-box .user-box input {
   width: 100%;
-  padding: 10px 0;
+  padding: 20px 0;
   font-size: 16px;
   color: #fff;
   margin-bottom: 30px;
@@ -952,30 +951,27 @@ form {
   border-bottom: 1px solid #fff;
   outline: none;
   background: transparent;
-
 }
 
-.user-box input:focus{
+.user-box input:focus {
   border-bottom: 1px solid blue;
-
 }
 
 .login-box .user-box label {
   position: absolute;
-  top: 0;
+  top: -1.5rem;
   left: 0;
-  padding: 10px 0;
+  padding: 10px 0px;
   font-size: 16px;
-  color: #fff;
+  color: #fff !important;
   pointer-events: none;
   transition: 0.5s;
 }
 
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
+.login-box .user-box input:focus ~ label {
   top: -20px;
   left: 0;
-  color: #bdb8b8;
+  color: blue !important;
   font-size: 12px;
 }
 
@@ -1029,56 +1025,85 @@ form {
   margin-top: 2.5rem;
   width: 100%;
   height: 10rem;
+}
 
+.message-label,
+.message-error {
+  color: red !important;
+}
+.login-box .error {
+  color: red;
+  font-size: 14px;
+  position: absolute;
+  top: 3rem;
+}
+input {
+  width: 100%;
+  height: 3rem;
+}
+input::placeholder {
+  text-align: center;
 }
 
 @media screen and (max-width: 768px) {
   .contact-form h2 {
     width: 80%;
-    font-size:2.5rem ;
+    font-size: 2.5rem;
   }
 
-  .login-box{
+  .login-box {
     width: 80%;
     position: relative;
     top: 39%;
   }
-  form{
+  form {
     width: 100%;
   }
-  .submit:active{
+  .submit:active {
     background-color: #f0f403;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .contact-form{
+  .contact-form {
     height: 150vh;
   }
   .contact-form h2 {
     width: 100%;
-    font-size:2rem ;
+    font-size: 2rem;
   }
-  .login-box{
+  .login-box {
     width: 100%;
     position: relative;
     top: 33%;
   }
-  form{
+  form {
     width: 100%;
   }
-  .submit:active{
+  .submit:active {
     background-color: #f0f403;
   }
 }
-div{
-  animation: 1s ease-out 0s 1 slideInLeft;
+p .values {
+  color: #fff !important;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+div {
+  animation: 0.5s ease-out 0s 1 slideInLeft;
   scroll-behavior: smooth;
-  
 }
 @keyframes slideInLeft {
   0% {
     transform: translateX(-100%);
   }
-
+}
+.btn .btn-dark,
+.btn .btn-light {
+  width: 50%;
+  padding: 0.5rem;
+  text-align: end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

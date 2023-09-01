@@ -1,6 +1,6 @@
 import React from 'react'
 import homeImg from '../images/pro.jpg'
-import { NavLink } from 'react-router-dom'
+import {Link } from 'react-router-dom'
 const HeroImg = () => {
   return (
     <div className="hero">
@@ -10,12 +10,8 @@ const HeroImg = () => {
           <p>HY I'M SAMI KHAN, A FRONT-END-DEVELOPER</p>
           <h1>REACT-DEVELOPER</h1>
           <div className="btn">
-            <button className='btn-dark'>
-              <NavLink to="/project">PROJECTS</NavLink>
-            </button>
-            <button className='btn-light'>
-              <NavLink to="/contact" >CONTACT</NavLink>
-            </button>
+              <Link className='btn-dark' to="/project">PROJECTS</Link>
+\              <Link className='btn-light' to="/contact">CONTACT</Link>
           </div>
         </div>
       </div>
