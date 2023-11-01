@@ -1,12 +1,12 @@
 import React from 'react'
-import sami from '../images/developer.png'
+import sami from '../images/pkboy.jpg'
 import { Link } from 'react-router-dom'
 const AboutSection = () => {
     return (
         <div className='main-about'>
             <div className="about-me">
                 <div className="left-about">
-                    <img src={sami} alt="a boyPicture" />
+                    <img src={sami} alt="boyPicture" />
                 </div>
                 <div className="right-about">
                     <h2>Who I Am?</h2>
