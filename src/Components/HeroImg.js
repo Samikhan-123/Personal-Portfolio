@@ -8,7 +8,7 @@ const HeroImg = () => {
         <img src={homeImg} alt="homeImg" className='home-img' />
         <div className="developer">
           <p>HY I'M SAMI KHAN, A Full-Stack-DEVELOPER</p>
-          <h1>MERN-Stack-Technologies</h1>
+          <h2>MERN-Stack-Technologies</h2>
           <div className="btn">
               <Link className='btn-dark' to="/project">PROJECTS</Link>
 \              <Link className='btn-light' to="/contact">CONTACT</Link>

@@ -21,9 +21,9 @@ const Login = () => {
       subject: Yup.string(),
       message: Yup.string().required('Message is required'),
     }),
-    onSubmit: (values) => {
-      console.log('Form values:', values);
-      sendEmail(values, formik.resetForm);
+    onSubmit: (values, { resetForm, setSubmitting }) => {
+      // console.log('Form values:', values);
+      sendEmail(values, resetForm, setSubmitting);
     },
   });
 
@@ -32,26 +32,26 @@ const Login = () => {
       to_name: 'Sami Khan',
       from_name: emailData.name,
       from_email: emailData.email,
-      from_subject: emailData.subject,
+      // from_subject: emailData.subject,
       message: emailData.message,
     };
 
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
-      .then((response) => {
-        if (response.status === 200) {
-          alert('Email sent successfully');
-          resetForm();
-          console.log(response);
-        } else {
-          alert('Error sending email. Please try again.');
-        }
-      })
-      .catch((error) => {
-        alert('Error sending email');
-        console.error('Error sending email:', error);
-      })
+     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
+    .then((response) => {
+      if (response.status === 200) {
+        alert('Email sent successfully');
+        resetForm();
+        console.log(response);
+      } else {
+        alert('Error sending email. Please try again.');
+      }
+    })
+    .catch((error) => {
+      alert('Error sending email');
+      console.error('Error sending email:', error);
+    })
       .finally(() => {
-        setSubmitting(false); // Reset isSubmitting flag after the email is sent
+        setSubmitting(false); 
       });
   };
 
@@ -107,7 +107,7 @@ const Login = () => {
             {formik.touched.message && formik.errors.message && <div className="message-error">{formik.errors.message}</div>}
           </div>
           <center>
-            <button type="submit" disabled={formik.isSubmitting || Object.keys(formik.errors).length > 0} className="submit">
+            <button type="submit" disabled={formik.isSubmitting} className="submit">
               {formik.isSubmitting ? 'Sending...' : 'SEND'}
               <span></span>
             </button>
