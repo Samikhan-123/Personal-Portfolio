@@ -5,12 +5,11 @@ import { Link } from 'react-router-dom'
 const Footer = () => {
     return (
         <div className="footer">
-            <div className="footer-container">
+            <div className="footer-container p-2">
                 <div className="left">
                     <div className="location">
                         <FaHome className='fa-icon' size={20} style={{ color: '#fff' }} />
-                        <p>Gulberg 3, Lahore,</p>
-                        <p> Pakistan</p>
+                        <p>Lahore, Pakistan</p>
                     </div>
                     <div className="phone">
                         <FaPhone className='fa-icon' size={20} style={{ color: '#fff', }} />
@@ -23,8 +22,8 @@ const Footer = () => {
 
                 </div>
                 <div className="right">
-                    <h4>About The Company</h4>
-                    <p>Hy this is me sami khan. the Front-End-Developer With React.js Expertise. Feel free to discussing new projects and design challenges.</p>
+                    <h4>About The Developer</h4>
+                    <p>Hy this is me sami khan. the Full-Stack-Developer With Mern-Stack Expertise. Feel free to discussing new projects and design challenges.</p>
                     <div className="social">
                         <Link to="https://web.facebook.com/samikhan7816" target='_blank' className='fb'>
                             <FaFacebook className='social-icon facebook' size={20} style={{ color: '#fff' }} />

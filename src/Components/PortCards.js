@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import CardData from './CardData'
 const PortCards = (props) => {
     return (
 
@@ -7,9 +8,9 @@ const PortCards = (props) => {
             <img className='img-tag' src={props.imgSrc} alt="img" />
             <h2 className="card-heading">{props.title}</h2>
             <p>{props.text}</p>
-            <div className="card-links">
+            <div className="card-links d-flex justify-content-center align-items-center">
                 <Link className="btn-dark" to={props.view}>View</Link>
-                <Link className="btn-dark disabled-link" to="#" disabled >Source</Link>
+                <Link className="btn-dark" to={props.source}>Source</Link>
             </div>
         </div>
 

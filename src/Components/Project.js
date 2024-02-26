@@ -19,10 +19,13 @@ const Project = () => {
                 imgSrc={val.imgSrc}
                 title={val.title}
                 text={val.text}
-                view={val.view} />
+                view={val.view}
+                source={val.source}
+              />
             )
 
-          })}
+          }
+          )}
 
         </div>
         <PricingCard />

@@ -1,6 +1,11 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import emailjs from '@emailjs/browser';
+
+const SERVICE_ID = 'service_010d61l';
+const TEMPLATE_ID = 'template_d0wxmyl';
+const USER_ID = 'W_wnUzCupn47AQ-CB';
 
 const Login = () => {
   const formik = useFormik({
@@ -16,14 +21,40 @@ const Login = () => {
       subject: Yup.string(),
       message: Yup.string().required('Message is required'),
     }),
-    onSubmit: (values,{resetForm}) => {
-      // handle form submission 
-      console.log(values);
-      alert(`Hy this is me ${formik.values.name} and my email is ${formik.values.email} and subject is ${formik.values.subject} and my messages is ${formik.values.message}`)
-      resetForm();
-
+    onSubmit: (values) => {
+      console.log('Form values:', values);
+      sendEmail(values, formik.resetForm);
     },
   });
+
+  const sendEmail = (emailData, setSubmitting, resetForm) => {
+    const templateParams = {
+      to_name: 'Sami Khan',
+      from_name: emailData.name,
+      from_email: emailData.email,
+      from_subject: emailData.subject,
+      message: emailData.message,
+    };
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
+      .then((response) => {
+        if (response.status === 200) {
+          alert('Email sent successfully');
+          resetForm();
+          console.log(response);
+        } else {
+          alert('Error sending email. Please try again.');
+        }
+      })
+      .catch((error) => {
+        alert('Error sending email');
+        console.error('Error sending email:', error);
+      })
+      .finally(() => {
+        setSubmitting(false); // Reset isSubmitting flag after the email is sent
+      });
+  };
+
 
   return (
     <div className="contact-form">
@@ -65,7 +96,7 @@ const Login = () => {
           </div>
           <div className="user-box">
             <textarea
-              className="area"
+              className="area p-2"
               name="message"
               placeholder="Type Your Message Here"
               onChange={formik.handleChange}
@@ -76,16 +107,11 @@ const Login = () => {
             {formik.touched.message && formik.errors.message && <div className="message-error">{formik.errors.message}</div>}
           </div>
           <center>
-            <button type="submit" className="submit">
-              SEND
-              <span> </span>
-
+            <button type="submit" disabled={formik.isSubmitting || Object.keys(formik.errors).length > 0} className="submit">
+              {formik.isSubmitting ? 'Sending...' : 'SEND'}
+              <span></span>
             </button>
-            
           </center>
-          <p className='values'>{formik.values.name}</p>
-            <p className='values'>{formik.values.email}</p>
-            <p className='values'>{formik.values.subject}</p>
         </form>
       </div>
     </div>

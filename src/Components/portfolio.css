@@ -617,18 +617,11 @@ li {
   line-height: 0.5rem;
   text-align: justify;
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: #fff !important;
+  background-color: #b7c9f2;
+  color: #000 !important;
   box-shadow: 0px 2px 5px black;
   transition: 0.2s all;
-  cursor: pointer;
   overflow: hidden;
-  border: 2px solid gold;
-}
-
-.card-container:hover {
-  transform: scale(1.1);
-  /* box-shadow: 1px 1px 7px gold; */
 }
 
 .img-tag {
@@ -646,14 +639,13 @@ li {
   font-weight: 700;
 }
 .card-container h2 {
-  color: #fff !important;
   font-weight: 700;
   font-size: 1rem;
   padding: 1rem;
 }
 
 .card-container > p {
-  color: #fff !important;
+  color: #000 !important;
   line-height: 1.1rem;
 }
 
@@ -665,6 +657,52 @@ li {
 .card-container .btn-dark {
   padding: 0.6rem;
   text-align: center;
+}
+
+.card-container .btn-dark:hover {
+  background: transparent;
+}
+
+/* services */
+#services-section {
+  background-color: #f8f9fa;
+  padding: 80px 0;
+}
+
+.service-card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #ffffff;
+  color: #000 !important;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  margin: 15px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: #b7c9f2;
+  color: #fff !important;
+  box-shadow: 2px 2px 3px #343a40;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #343a40;
+}
+
+.card p {
+  color: #6c757d;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* media queries for project section */
@@ -977,15 +1015,14 @@ form {
 }
 
 .login-box form .submit {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
+ 
+  padding: 10px,20px;
   color: #ffffff;
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
-  transition: 0.5s;
+  transition: 0.5s all;
   margin-top: 40px;
   letter-spacing: 4px;
   background-color: transparent !important;
@@ -1001,6 +1038,7 @@ form {
   position: absolute;
   display: block;
 }
+
 
 @keyframes btn-anim1 {
   0% {
@@ -1094,7 +1132,7 @@ p .values {
   font-size: 1.5rem;
   font-weight: 400;
 }
-*{
+* {
   animation: 0.5s ease-out 0s 1 slideInLeft;
   scroll-behavior: smooth;
 }
@@ -1117,6 +1155,5 @@ p .values {
 }
 /* CSS for the disabled link */
 .disabled-link {
-  color: #999 !important; 
- 
+  color: #999 !important;
 }
