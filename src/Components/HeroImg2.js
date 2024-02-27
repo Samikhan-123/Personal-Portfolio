@@ -6,7 +6,7 @@ const HeroImg2 = (props) => {
     return (
         <div className="main">
             <div className="header">
-                <h1>{props.heading}</h1>
+                <h2>{props.heading}</h2>
                 <p>{props.text}</p>
             </div>
             <div className="bg-img" style={backgroundImageStyle}>

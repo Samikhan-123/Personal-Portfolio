@@ -11,7 +11,7 @@ const AboutSection = () => {
                 <div className="right-about">
                     <h2>Who I Am?</h2>
                     <p>Thank you for visiting my portfolio! I'm excited to introduce myself as a committed Full-Stack developer who loves using MERN-Stack Technologies to make amazing web experiences. I enjoy turning design ideas into smooth and user-friendly websites. I bring together creativity and technical skills for every project I work on. I create responsive and secure websites for clients.</p>
-                    <button className='btn-dark' download>
+                    <button className='btn-dark'>
                         <Link to="/contact">Hire Me</Link>
                     </button>
                 </div>

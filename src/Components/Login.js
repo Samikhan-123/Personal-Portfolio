@@ -36,22 +36,22 @@ const Login = () => {
       message: emailData.message,
     };
 
-     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
-    .then((response) => {
-      if (response.status === 200) {
-        alert('Email sent successfully');
-        resetForm();
-        console.log(response);
-      } else {
-        alert('Error sending email. Please try again.');
-      }
-    })
-    .catch((error) => {
-      alert('Error sending email');
-      console.error('Error sending email:', error);
-    })
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
+      .then((response) => {
+        if (response.status === 200) {
+          alert('Email sent successfully');
+          resetForm();
+          console.log(response);
+        } else {
+          alert('Error sending email. Please try again.');
+        }
+      })
+      .catch((error) => {
+        alert('Error sending email');
+        console.error('Error sending email:', error);
+      })
       .finally(() => {
-        setSubmitting(false); 
+        setSubmitting(false);
       });
   };
 

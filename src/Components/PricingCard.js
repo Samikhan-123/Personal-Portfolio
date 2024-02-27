@@ -3,7 +3,7 @@ import React from 'react'
 const PricingCard = () => {
     return (
         <>
-            <section id="services-section" className="py-5 text-dark ">
+            <section id="services-section" className="py-5 text-dark">
                 <div className="container">
                     <h2 className="text-center mb-5 text-dark fw-bold">Services</h2>
                     <p className="text-center text-dark">
