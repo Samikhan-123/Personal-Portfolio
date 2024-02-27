@@ -543,7 +543,7 @@ li {
   text-align: center;
   font-weight: 700;
   color: #000 !important;
-  padding-top: 5rem;
+  padding-top: 3rem;
 }
 /* styling card component */
 
@@ -932,7 +932,7 @@ li {
   .header p {
     font-size: 1rem;
   }
-  .header{
+  .header {
     width: 80%;
     /* padding: 20px; */
   }
@@ -1019,7 +1019,6 @@ form {
 }
 
 .login-box form .submit {
- 
   /* padding: 10px 25px; */
   color: #fff;
   font-size: 16px;
@@ -1042,7 +1041,6 @@ form {
   position: absolute;
   display: block;
 }
-
 
 @keyframes btn-anim1 {
   0% {
@@ -1157,4 +1155,3 @@ p .values {
   align-items: center;
   justify-content: center;
 }
-
